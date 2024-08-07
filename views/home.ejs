@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <%- include('./partials/nav') %>
+  <h1><%= data.name %></h1>
+  <h3><%= data.address %></h3>
+  <h3><%= data.phone %></h3>
+  <% if (data.isOpen === true) { %>
+      <h4 style="color: green;">YES we are open!</h4>
+  <% } else { %>
+    <h4 style="color: red;">Sorry, we are closed</h4>
+  <% } %>
+  <h4></h4>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= category_name.charAt(0).toUpperCase() + category_name.slice(1); %></title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <% if(data.length > 0) { %>
+        <h1><%= category_name.charAt(0).toUpperCase() + category_name.slice(1); %></h1>
+        <% data.forEach(element => { %>
+            <h4> - <%= element.name %> -  $<%= element.price %></h4>
+            <h5> <%= element.details %> </h5>
+            Rating:<% for(i = 0; i < element.rating; i++){ %> <span style="position: relative; top:8px; font-size: 25px; color: green">*</span> <% } %>
+            <% }) %>
+        <% } else { %>
+            <h1> We could not find any item in out menu under that category </h1>
+        <% } %>
+</body>
+</html

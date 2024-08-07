@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <h1>Full Menu</h1>
+
+    <h2> Mains </h2>
+    <% const mains = data.filter((item) => item.category === 'mains'); %>
+    <% mains.forEach(element => { %>
+     <h4> - <%= element.name %> -  $<%= element.price %></h4>
+     <h5> <%= element.details %> </h5>
+     Rating:<% for(i = 0; i < element.rating; i++){ %> <span style="position: relative; top:8px; font-size: 25px; color: green">*</span> <% } %>
+    <% }) %>
+
+    <h2> Desserts </h2>
+    <% const desserts = data.filter((item) => item.category === 'desserts'); %>
+    <% desserts.forEach(element => { %>
+     <h4> - <%= element.name %> -  $<%= element.price %></h4>
+     <h5> <%= element.details %> </h5>
+     Rating:<% for(i = 0; i < element.rating; i++){ %> <span style="position: relative; top:8px; font-size: 25px; color: green">*</span> <% } %>
+    <% }) %>
+
+    <h2> Sides </h2>
+    <% const sides = data.filter((item) => item.category === 'sides'); %>
+    <% sides.forEach(element => { %>
+     <h4> - <%= element.name %> -  $<%= element.price %></h4>
+     <h5> <%= element.details %> </h5>
+     Rating:<% for(i = 0; i < element.rating; i++){ %> <span style="position: relative; top:8px; font-size: 25px; color: green">*</span> <% } %>
+    <% }) %>
+</body>
+</html
